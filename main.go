@@ -36,7 +36,7 @@ func main() {
 
 	err = kafka.InitKafka(appConfig.kafkaAddr)
 	if err != nil {
-		logs.Error("init tail failed, err:%v", err)
+		logs.Error("init kafka failed, err:%v", err)
 		return
 	}
 

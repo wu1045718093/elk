@@ -31,13 +31,13 @@ func SendToKafka(data, topic string) (err error) {
 		Value: sarama.ByteEncoder(data),
 	}
 
-	part, offset, err := client.SendMessage(msg)
+	_, _, err = client.SendMessage(msg)
 	if err != nil {
 		logs.Error("send message failed, err:%v data:%v topic:%v", data, err, topic)
 		return
 	}
 
-	logs.Debug("send succ, part:%v offset:%v topic:%v", part, offset, topic)
+	//logs.Debug("send succ, part:%v offset:%v topic:%v", part, offset, topic)
 
 	return
 }
