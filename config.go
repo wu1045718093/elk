@@ -30,7 +30,7 @@ func loadCollectConf(conf config.Configer) (err error) {
 		return
 	}
 
-	cc.Topic, err = conf.String("collect::log_topic")
+	cc.Topic, err = conf.String("collect::topic")
 	if len(cc.Topic) == 0 {
 		err = errors.New("invalid collect::log_topic")
 		return
